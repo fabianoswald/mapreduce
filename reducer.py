@@ -21,7 +21,7 @@ import sys
 
 # Sum of all sales (values) is initialized with zero, we just started
 sum_of_values = 0
-
+count = 0
 # Previous key is initialized with None, we just started
 previous_key = None
 
@@ -54,8 +54,8 @@ for line in sys.stdin:
     # the float function transforms the value
     # to a float data type (like decimal)
     sum_of_values += float(value)
+    count = count + 1
     # the previous key for the next iteration is the current key of the this iteration 
     previous_key = key
-
-# write the last result to stdout
-sys.stdout.write("{0}\t{1}\n".format(previous_key, sum_of_values))
+   
+    sys.stdout.write("{0}\t{1}\n".format(previous_key, sum_of_values/count))
